@@ -1,0 +1,107 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>login modal</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .btn-login {
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+      }
+      .overlay {
+        width: 100%;
+        position: fixed;
+        top: 0%;
+        background: rgba(0, 0, 0, 0.5);
+        height: 100vh;
+        z-index: -1;
+        opacity: 0;
+        transition: 1s;
+      }
+      .showoverlay {
+        opacity: 1;
+        z-index: 1;
+      }
+      .loginform {
+        width: 350px;
+        padding: 30px;
+        background-color: white;
+        position: absolute;
+        transition: 2s;
+        left: 50%;
+        top: -50%;
+        z-index: 3;
+        box-shadow: 0px 0px 10px 3px #ccc;
+        transform: translate(-50%, -50%);
+      }
+      .showloginform {
+        top: 50%;
+      }
+      .loginform input {
+        width: 100%;
+        margin-bottom: 15px;
+        height: 30px;
+      }
+      .loginform button {
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+      }
+      .loginform span {
+        position: absolute;
+        cursor: pointer;
+        right: 0px;
+        width: 30px;
+        color: white;
+        height: 30px;
+        line-height: 30px;
+        background-color: red;
+        text-align: center;
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn-login">Login</button>
+
+    <div class="overlay" onclick="closeModal()"></div>
+    <div class="loginform">
+      <span>&times;</span>
+      <form action="">
+        <div>
+          <label for="">UserName</label>
+          <input type="text/" />
+        </div>
+        <div>
+          <label for="">Password</label>
+          <input type="text/" />
+        </div>
+        <button>LOGIN</button>
+      </form>
+    </div>
+  </body>
+
+  <script>
+    function showModal() {
+      document.querySelector(".overlay").classList.add("showoverlay");
+      document.querySelector(".loginform").classList.add("showloginform");
+    }
+    function closeModal() {
+      document.querySelector(".overlay").classList.remove("showoverlay");
+      document.querySelector(".loginform").classList.remove("showloginform");
+    }
+    var btnlogin = document.querySelector(".btn-login");
+    btnlogin.addEventListener("click", showModal);
+
+    var c = document.querySelector("span");
+    c.addEventListener("click", closeModal);
+  </script>
+</html>
