@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+* ::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+main header {
+  background-color: #2791cf;
+  color: #ffffff;
+  padding: 7px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+main header div.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+main header div.title h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  margin-left: 10px;
+}
+main header button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: none;
+}
+main div.container {
+  background-color: #7E878c;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+main div.container div.user-window {
+  width: 350px;
+  color: #ffffff;
+  background-color: #373f3f;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+main div.container div.user-window div.user-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+main div.container div.user-window div.user-head h4 {
+  background-color: #7E878c;
+  padding: 0 8px;
+  border-radius: 50px;
+}
+main div.container div.user-window div.user-list p {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+main div.container div.chat-window {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #373f3f;
+}
+main div.container div.chat-window div.chats {
+  height: 70vh;
+  padding: 20px;
+  overflow-y: auto;
+}
+main div.container div.chat-window div.chats div.user-join {
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  border-radius: 50px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 7px 20px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+main div.container div.chat-window div.chats div.message {
+  color: #373f3f;
+  background-color: #ffffff;
+  padding: 5px 15px;
+  max-width: 400px;
+  margin-bottom: 15px;
+  border-radius: 10px 50px 50px 10px;
+}
+main div.container div.chat-window div.chats div.message p {
+  font-size: 16px;
+}
+main div.container div.chat-window div.chats div.outgoing {
+  margin-left: auto;
+  color: #ffffff;
+  background-color: #2791cf;
+  border-radius: 50px 10px 10px 50px;
+  text-align: right;
+}
+main div.container div.chat-window div.user-input {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 20px;
+}
+main div.container div.chat-window div.user-input input {
+  font-size: 16px;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  width: 100%;
+  border-radius: 50px 0 0 50px;
+}
+main div.container div.chat-window div.user-input button {
+  font-size: 16px;
+  background-color: #2791cf;
+  padding: 5px 15px;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  border-radius: 0 50px 50px 0;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    width: 95%;
+  }
+  main header button {
+    display: block;
+  }
+  main div.container {
+    position: relative;
+  }
+  main div.container div.user-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    z-index: 11;
+    box-shadow: 0 15 20px -20px black;
+    padding-bottom: 0;
+    display: none;
+  }
+  main div.container div.chat-window div.chats div.message {
+    max-width: 300px;
+  }
+}/*# sourceMappingURL=style.css.map */

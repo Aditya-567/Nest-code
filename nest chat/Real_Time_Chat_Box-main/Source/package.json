@@ -1,0 +1,18 @@
+{
+  "name": "real-time-chat-box",
+  "version": "1.0.0",
+  "description": "Traivis Chat App",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
