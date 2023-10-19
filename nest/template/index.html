@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Weekly Coding Challenge #1 -  Double slider Sign in/up Form - Desktop Only</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="/static/style12.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name"id="username" required />
+			<input type="email" placeholder="Email"id="e-mail" required/>
+			<input type="password" placeholder="Password"id="password" required />
+			<button type="button" value="login" id="SIGNUP">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+  <script  src="/static/script.js"></script>
+
+</body>
+
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+    import { getDatabase } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyArh5N_lurqqSDjidkUbqitB9qeCDDJv-E",
+    authDomain: "authentication-app-129dc.firebaseapp.com",
+    databaseURL: "https://authentication-app-129dc-default-rtdb.firebaseio.com",
+    projectId: "authentication-app-129dc",
+    storageBucket: "authentication-app-129dc.appspot.com",
+    messagingSenderId: "900267854986",
+    appId: "1:900267854986:web:6f053299802b16bb187173"
+  };
+	// Initialize Firebase
+	const app = initializeApp(firebaseConfig);
+	const database = getDatabase(app);
+	const auth = getAuth(app);
+	
+
+	SIGNUP.addEventListener('click', (e) => {
+  try {
+    console.log(11);
+    var email = document.getElementById("e-mail").value;
+    var password = document.getElementById("password").value;
+    var username = document.getElementById("username").value;
+    console.log(email, password, username);
+    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+      // Signed in 
+      console.log("hello");
+      const user = userCredential.user;
+
+      // Redirect to login.html on successful signup
+      if (userCredential) {
+        window.location.href = 'index.html';
+      }
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log("hello2");
+
+      alert(errorMessage);
+    });
+  } catch (error) {
+    console.log({ error });
+  }
+});
+
+  </script>
+
+</html>
