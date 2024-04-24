@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Nest</title>
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!--scss file-->
+    <link rel="stylesheet" href="assets/styles/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <header>
+        <div class="title">
+          <img
+            src="assets/icons/logo.png"
+            height="80px"
+            width="80px"
+            alt="Logo"
+          />
+          <h3>Nest Chat</h3>
+        </div>
+        <button type="button" onclick="show_hide()">
+          <img src="assets/icons/hamburger.png" width="25px" alt="hamburger" />
+        </button>
+      </header>
+
+      <div class="container">
+        <div>
+          <div class="user-window">
+            <div class="user-head">
+              <h3>&nbsp;People</h3>
+
+              <h4 class="user-count">0</h4>
+            </div>
+            <iframe
+              src="https://giphy.com/embed/26FPJGjhefSJuaRhu"
+              width="380"
+              height="260"
+              frameborder="0"
+              class="giphy-embed"
+              allowfullscreen
+            ></iframe>
+
+            <div class="user-list"></div>
+          </div>
+        </div>
+        <div class="chat-window">
+          <div class="chats"></div>
+          <div class="user-input">
+            <input
+              id="user-msg"
+              type="text"
+              placeholder="Type your message..."
+            />
+            <button type="button" id="user-send">SEND</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      var uwindow = document.querySelector(".user-window");
+      function show_hide() {
+        if (uwindow.style.display == "block") {
+          uwindow.style.display = "none";
+        } else {
+          uwindow.style.display = "block";
+        }
+      }
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/js/client.js"></script>
+  </body>
+</html>
